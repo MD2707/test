@@ -155,7 +155,7 @@ function changeOpacity(opaciteFinal){
                     },
                     {
                         opacity : opaciteFinal,
-                    }],1000);
+                    }],2000);
                 t.style.opacity=opaciteFinal; 
             });
 }
