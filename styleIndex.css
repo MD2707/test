@@ -1,0 +1,124 @@
+
+*{
+    font-family: 'Roboto', sans-serif;
+
+}
+body{
+    background-color: black;
+    width:20000px;
+    height: 20000px;
+}
+#fusee{
+    width: 10rem;
+    height: 10rem;
+    z-index: 3; 
+}
+#conteneurFusee{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top:20000px;
+    left: 10000px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 3;
+} 
+.galaxieClass{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#galaxie{
+    position: absolute;
+    left: 5700px;
+    top: 19100px;
+    background-image: url("image/giphy.gif");
+    background-size: cover;
+    background-position: center;
+    width: 40rem;
+    height: 40rem;
+    border: solid red 2px;
+    z-index: -10;
+}
+
+#img1{
+    position: relative;
+    top: -40px;
+    left: 20px;
+    width: 10rem;
+    height: 10rem;
+}
+#img2{
+    position: relative;
+    top: -50px;
+    left: 200px;
+    width: 5rem;
+    height: 5rem;
+}
+#img3{
+    position: relative;
+    top: 20px;
+    left: 280px;
+    width: 11rem;
+    height: 8rem;
+}
+#img4{
+    position: relative;
+    top: 100px;
+    left: 200px;
+    width: 5rem;
+    height: 5rem;
+}
+#img5{
+    position: relative;
+    top: 50px;
+    left: 0px;
+    width: 10rem;
+    height: 10rem;
+}
+#img6{
+    position: relative;
+    top: -180px;
+    right: 200px;
+    width: 15rem;
+    height: 15rem;
+}
+#img7{
+    position: relative;
+    top: -520px;
+    right: 250px;
+    width: 7rem;
+    height: 7rem;
+}
+#img8{
+    position: relative;
+    top: -800px;
+    left: -200px;
+    width: 6rem;
+    height: 6rem;
+}
+#galaxie:hover img{
+    visibility: visible;
+}
+
+@-webkit-keyframes rotate {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes rotate {
+    from { -moz-transform: rotate( 0deg );   }
+    to   { -moz-transform: rotate( 360deg ); }
+  }
+
+@keyframes rotate {
+  from { transform: rotate( 0deg );   }
+  to   { transform: rotate( 360deg ); }
+}
+.planete {
+    -webkit-animation: rotate 15s linear infinite ;
+    -moz-animation: rotate 15s linear infinite ;
+    -ms-animation: rotate 15s linear infinite ;
+    -o-animation: rotate 15s linear infinite ;
+}
