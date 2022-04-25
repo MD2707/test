@@ -42,6 +42,7 @@ function maFonction(event){
     window.scroll(parseInt(element.style.left)- window.innerWidth/2.25,parseInt(element.style.top)-window.innerHeight/2.25); 
     console.log(parseInt(element.style.left));
     console.log("top "+parseInt(element.style.top));
+    displayPlanete();
     switch(event.code) {
         case "KeyS":
         case "ArrowDown":
@@ -122,4 +123,39 @@ function maFonction(event){
   }
 function NombreRandom(min,max){
     return Math.random() * (max - min + 1) + min;
+}
+
+function displayPlanete(){
+    var galaxie = document.getElementById("galaxie");
+    var element2 = document.getElementById("conteneurFusee")
+    var element = window.getComputedStyle(element2);
+    var galaxieStyle =window.getComputedStyle(galaxie);
+    var milieuX=parseInt(element.left)+parseInt(element.width)/2;
+    var milieuY=parseInt(element.top)+parseInt(element.height)/2;
+    var tabPlanete = document.getElementsByClassName("planete");
+    var tabPlaneteStyle = window.getComputedStyle(tabPlanete[1]);
+    if( milieuX>parseInt(galaxieStyle.left)
+        && milieuX <parseInt(galaxieStyle.left)+parseInt(galaxieStyle.width)
+        && milieuY<parseInt(galaxieStyle.top)+parseInt(galaxieStyle.height)
+        && milieuY>parseInt(galaxieStyle.top)){
+            changeOpacity(1);
+        }
+        else{
+            changeOpacity(0);
+        }
+}
+function changeOpacity(opaciteFinal){
+    var tabPlanete = document.getElementsByClassName("planete");
+    var tabPlaneteStyle = window.getComputedStyle(tabPlanete[1]);
+    Array.from(tabPlanete).forEach((t,index) =>
+            {
+            t.animate([
+                    {
+                        opacity : tabPlaneteStyle.opacity,
+                    },
+                    {
+                        opacity : opaciteFinal,
+                    }],1000);
+                t.style.opacity=opaciteFinal; 
+            });
 }
